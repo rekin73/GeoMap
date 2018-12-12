@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import MyButton from '../components/MyButton';
 import { Location, Permissions } from 'expo';
-import { AsyncStorage } from "react-native"
+import { AsyncStorage } from "react-native";
+import LocList from "../components/LocList";
 
 
 export default class componentName extends Component {
@@ -56,6 +57,7 @@ export default class componentName extends Component {
             <View style={styles.view}>
                 <View><MyButton text="Pobierz i zapisz pozycję" style={styles.myButton} fn={this.getPosition} /><MyButton text="Usuń wszystkie dane" style={styles.myButton} fn={this.deleteData} /></View>
                 <MyButton text="Przejdź do mapy" style={styles.myButton} fn={this.getAllData} />
+                <LocList data={this.getAllData()} />
             </View>
         );
     }
